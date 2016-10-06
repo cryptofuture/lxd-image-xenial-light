@@ -12,6 +12,8 @@
 ## Create container from image
 * Run `lxc launch xenial-light containernameyouwish`
 
+## About image and extra installed software
+
 ## List of packages
 ```bash
 # dpkg --get-selections | grep -v deinstall output:
@@ -367,5 +369,3 @@ xml-core					install
 xz-utils					install
 zlib1g:amd64					install
 ```
-
-## About image and extra installed software
