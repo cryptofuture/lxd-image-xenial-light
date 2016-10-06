@@ -15,7 +15,7 @@
 ## About image and extra installed software
 
 ## List of packages
-```bash
+```
 # dpkg --get-selections | grep -v deinstall output:
 acl						install
 adduser						install
