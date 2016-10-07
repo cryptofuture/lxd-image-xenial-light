@@ -18,7 +18,7 @@
 ## About image and extra installed software
 Image is a lot like only base system, but with some extra soft installed. You can remove it, if you don't like. Less then 300Mb compressed, and less then 700Mb as a container.
 ### Extra software installed
-htop, mc, duply, duplicity, unattended-upgrades and PostgreSQL.
+htop, mc, duply, duplicity, unattended-upgrades and PostgreSQL. Also systemd-cron installed instead default cron, you need to add user to cron group, if you need to run cron jobs with user.
 ### Modifications made
 `txqueuelen 10000 for eth0` in `/etc/network/interfaces`
 
