@@ -43,7 +43,8 @@ deb http://ppa.launchpad.net/hda-me/proxychains-ng/ubuntu xenial main
 
 ```bash
 # Unattended-Upgrades activated and changed
-Unattended-Upgrade::Allowed-Origins {	"${distro_id}:${distro_codename}-security";
+Unattended-Upgrade::Allowed-Origins {	
+"${distro_id}:${distro_codename}-security";
 "${distro_id}:${distro_codename}-updates";
 "${distro_id}:${distro_codename}-proposed";
 //	"${distro_id}:${distro_codename}-backports";	
