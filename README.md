@@ -2,18 +2,18 @@
 ###### Light image with Ubuntu Xenial for use with lxc/lxd
 
 ## Import
-* Download [xenial-light.tar.gz](https://github.com/cryptofuture/lxd-image-xenial-light/raw/master/xenial-light.tar.gz)
-* Check sha256sum with `sha256sum xenial-light.tar.gz`
+* Download [xenial-light2.tar.gz](https://github.com/cryptofuture/lxd-image-xenial-light/raw/master/xenial-light2.tar.gz)
+* Check sha256sum with `sha256sum xenial-light2.tar.gz`
 
 ```bash
 # Correct output:
-03b10effb5a45f0ed0bcacd9a03f62b72850f68b3331ca8be02130975853499b  xenial-light.tar.gz
+22109ae09b16ed2c786757bb469fae96a789c466c15b6128f4228cff111710aa  xenial-light2.tar.gz
 ```
 
-* Import image with: `lxc image import xenial-light.tar.gz --alias xenial-light`
+* Import image with: `lxc image import xenial-light2.tar.gz --alias xenial-light2`
 
 ## Create container from image
-* Run `lxc launch xenial-light containernameyouwish`
+* Run `lxc launch xenial-light2 containernameyouwish`
 
 ## About image and extra installed software
 Image is a lot like only base system, but with some extra soft installed. You can remove it, if you don't like. Less then 300Mb compressed, and less then 700Mb as a container.
@@ -34,23 +34,24 @@ deb http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted univer
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
 deb http://archive.ubuntu.com/ubuntu/ xenial-proposed main restricted universe multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-proposed main restricted universe multiverse
-### 3-rd party
-deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
 # In /etc/apt/sources.list.d/hda-me-ubuntu-*
 deb http://ppa.launchpad.net/hda-me/duply/ubuntu xenial main
 deb http://ppa.launchpad.net/hda-me/proxychains-ng/ubuntu xenial main
+# In /etc/apt/sources.list.d/saltstack.list
+deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main
 ```
 
 ```bash
 # Unattended-Upgrades activated and changed
-Unattended-Upgrade::Allowed-Origins {	
-"${distro_id}:${distro_codename}-security";
-"${distro_id}:${distro_codename}-updates";
-"${distro_id}:${distro_codename}-proposed";
-//	"${distro_id}:${distro_codename}-backports";	
-"LP-PPA-hda-me-duply:xenial";
-"LP-PPA-hda-me-proxychains-ng:xenial";
-"apt.postgresql.org:xenial-pgdg";};
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}-security";
+    "${distro_id}:${distro_codename}-updates";
+    "${distro_id}:${distro_codename}-proposed";
+//	"${distro_id}:${distro_codename}-backports";
+    "LP-PPA-hda-me-duply:${distro_codename}";
+    "LP-PPA-hda-me-proxychains-ng:${distro_codename}";
+    "SaltStack:"
+};
 ```
 
 ```bash
@@ -59,7 +60,6 @@ APT::Install-Recommends "false";
 ```
 
 `/etc/update-manager/release-upgrades` changed to `Prompt=never`, [very cpu intensive](https://askubuntu.com/questions/322343/check-new-release-process-eating-up-resources-on-ubuntu-server-13-04)  
-[unattended_upgrades_repos.py](https://github.com/abhigenie92/unattended_upgrades_repos/blob/master/unattended_upgrades_repos.py) script placed in `/usr/local/bin`
 
 ## List of packages
 
@@ -256,7 +256,6 @@ libpipeline1:amd64				install
 libplymouth4:amd64				install
 libpng12-0:amd64				install
 libpopt0:amd64					install
-libpq5:amd64					install
 libprocps4:amd64				install
 libpython-stdlib:amd64				install
 libpython2.7-minimal:amd64			install
@@ -346,12 +345,7 @@ pciutils					install
 perl						install
 perl-base					install
 perl-modules-5.22				install
-pgdg-keyring					install
 popularity-contest				install
-postgresql-9.6					install
-postgresql-client-9.6				install
-postgresql-client-common			install
-postgresql-common				install
 powermgmt-base					install
 procps						install
 proxychains-ng					install
@@ -386,7 +380,6 @@ sgml-base					install
 shared-mime-info				install
 software-properties-common			install
 squashfs-tools					install
-ssl-cert					install
 strace						install
 sudo						install
 systemd						install
