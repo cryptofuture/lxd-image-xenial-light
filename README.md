@@ -410,7 +410,7 @@ xml-core					install
 xz-utils					install
 zlib1g:amd64					install
 ```
-# Donation
+## Donation
 
 Consider making a donation, if you like what I doing.
 I working remotely and income is unstable, so every little bit helps.
@@ -419,24 +419,24 @@ Also it would be nice if you provide, a note on `admin@hda.me` after making a do
 
 I also open to reasonable work offers, especially if offer would be close to a field or project I work with.
 
-## E-money & Fiat
+### E-money & Fiat
 
-### Yandex Money
+#### Yandex Money
 Donation on Yandex Money: https://money.yandex.ru/to/410015241627045)
-### Advanced Cash
+#### Advanced Cash
 Open https://wallet.advcash.com/pages/transfer/wallet and use `mmail@sent.com` in `Specify the recipient's wallet or e-mail` field
-### PayPal
+#### PayPal
 Donation with PayPal: https://paypal.me/hdadonation
-### Payeer
+#### Payeer
 Donation with Payeer: On https://payeer.com/en/account/send/ use `P2865115` in `Account, e-mail or phone number` field
 
-## Cryptocurrency
+### Cryptocurrency
 
-### Bitcoin
+#### Bitcoin
 Address is `1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9`
-### Musicoin
+#### Musicoin
 Address is `0xf449f8c17a056e9bfbefe39637c38806246cb2c9`
-### Ethereum
+#### Ethereum
 Address is `0x23459a89eAc054bdAC1c13eB5cCb39F42574C26a`
-### Other
+#### Other
 I could provide you with some relatively cheap "hardware" donation options directly to my PO Box, if you prefer real gifts. Ask for details on `admin@hda.me`
